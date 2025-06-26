@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción a Talleres</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inscripción a Talleres Culturales</h1>
+        <form id="formInscripcion">
+            <!-- Campo 1: Nombre (con expresión regular) -->
+            <div class="form-group">
+                <label for="nombre">Nombre completo*</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez">
+                <div class="error-message" id="errorNombre"></div>
+            </div>
+
+            <!-- Campo 2: Taller (select) -->
+            <div class="form-group">
+                <label for="taller">Taller*</label>
+                <select id="taller" name="taller">
+                    <option value="">Seleccione un taller...</option>
+                    <option value="pintura">Pintura</option>
+                    <option value="danza">Danza</option>
+                    <option value="teatro">Teatro</option>
+                    <option value="musica">Música</option>
+                </select>
+                <div class="error-message" id="errorTaller"></div>
+            </div>
+
+            <!-- Campo 3: Turno (radio buttons) -->
+            <div class="form-group">
+                <label>Turno*</label>
+                <div class="radio-group">
+                    <input type="radio" id="manana" name="turno" value="mañana">
+                    <label for="manana">Mañana (9-12hs)</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="tarde" name="turno" value="tarde">
+                    <label for="tarde">Tarde (14-17hs)</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="noche" name="turno" value="noche">
+                    <label for="noche">Noche (18-21hs)</label>
+                </div>
+                <div class="error-message" id="errorTurno"></div>
+            </div>
+
+            <!-- Campo 4: Materiales (checkbox opcional) -->
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="materiales" name="materiales">
+                <label for="materiales">Incluir materiales básicos (+$500)</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Inscripción</button>
+        </form>
+
+        <div id="mensajeExito" class="hidden">
+            <h2>¡Inscripción exitosa!</h2>
+            <div id="datosConfirmacion"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
